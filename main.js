@@ -104,3 +104,34 @@ function iterativeFib() {
     console.log(`This took ${performance.now() - start} milliseconds to run`);
 }
 iterativeFib();
+
+console.log("\n********************************************");
+console.log("Reverse String Given\n");
+
+const story = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident culpa nihil repellat nulla laboriosam maxime, quia aliquam ipsam reprehenderit delectus reiciendis molestias assumenda aut fugit tempore laudantium tempora aspernatur? Repellendus consequatur expedita doloribus soluta cupiditate quae fugit! Aliquid, repellat animi, illum molestias maiores, laboriosam vero impedit iusto mollitia optio labore asperiores! orem ipsum dolor sit amet consectetur adipisicing elit. Provident culpa nihil repellat nulla laboriosam maxime, quia aliquam ipsam reprehenderit delectus reiciendis molestias assumenda aut fugit tempore laudantium tempora aspernatur? Repellendus consequatur expedita doloribus soluta cupiditate quae fugit! Aliquid, repellat animi, illum molestias maiores, laboriosam vero impedit iusto mollitia optio labore asperiores! orem ipsum dolor sit amet consectetur adipisicing elit. Provident culpa nihil repellat nulla laboriosam maxime, quia aliquam ipsam reprehenderit delectus reiciendis molestias assumenda aut fugit tempore laudantium tempora aspernatur? Repellendus consequatur expedita doloribus soluta cupiditate quae fugit! Aliquid, repellat animi, illum molestias maiores, laboriosam vero impedit iusto mollitia optio labore asperiores! orem ipsum dolor sit amet consectetur adipisicing elit. Provident culpa nihil repellat nulla laboriosam maxime, quia aliquam ipsam reprehenderit delectus reiciendis molestias assumenda aut fugit tempore laudantium tempora aspernatur? Repellendus consequatur expedita doloribus soluta cupiditate quae fugit! Aliquid, repellat animi, illum molestias maiores, laboriosam vero impedit iusto mollitia optio labore asperiores! orem ipsum dolor sit amet consectetur adipisicing elit. Provident culpa nihil repellat nulla laboriosam maxime, quia aliquam ipsam reprehenderit delectus reiciendis molestias assumenda aut fugit tempore laudantium tempora aspernatur? Repellendus consequatur expedita doloribus soluta cupiditate quae fugit! Aliquid, repellat animi, illum molestias maiores, laboriosam vero impedit iusto mollitia optio labore asperiores!";
+
+function reverseStringV1() {
+    const { performance } = require('perf_hooks');
+    const start = performance.now();
+    const reversed1 = story.split("").reverse().join("");
+    console.log("Reversed String:", reversed1);
+    console.log(`This took ${performance.now() - start} milliseconds to run`);
+}
+reverseStringV1();
+
+console.log("\n********************************************");
+console.log("Reverse String Refactored\n");
+
+function reverseStringV2() {
+    const { performance } = require('perf_hooks');
+    const start = performance.now();
+    let reversed2 = "";
+
+    for (let x=story.length-1; x>=0; x--) {
+        reversed2 += story[x];
+    }
+
+    console.log("Reversed String:", reversed2);
+    console.log(`This took ${performance.now() - start} milliseconds to run`);
+}
+reverseStringV2();
